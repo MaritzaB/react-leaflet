@@ -14,3 +14,17 @@ $ docker run -it -p 5173:5173 --name react_vite --volume ${PWD}/app:/app ejemplo
 ```
 $ docker container ls -la
 ```
+---
+## Might be useful:
+
+[Dockerizing a React application with NodeJS, Postgress n Nginx |dev & prod|](https://www.youtube.com/watch?v=-pTel5FojAQ)
+
+[Introducción a Vite, + Deploy en Github Pages](https://www.youtube.com/watch?v=UX4gvort2TU)
+___
+### Para la API REST
+
+[NodeJS Crea una REST API escalable y sostenible con Typescript y express](https://www.youtube.com/watch?v=T1QFGwOnQxQ)
+
+___
+## Mapas que podemos utilizar
+

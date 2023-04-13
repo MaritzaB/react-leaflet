@@ -2,4 +2,4 @@ chown:
 	sudo chown -R maritzee:maritzee .
 
 clean:
-	cd app/ && rm -R prueba1
+	docker container rm react_vite
