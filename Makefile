@@ -2,4 +2,4 @@ chown:
 	sudo chown -R maritzee:maritzee .
 
 clean:
-	docker container rm react_vite
+	sudo rm --recursive app/mapa/node_modules
