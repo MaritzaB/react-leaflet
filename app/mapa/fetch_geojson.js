@@ -21,5 +21,9 @@ const getServerQuery = (layer, maxFeatures) => {
 const query = getServerQuery(workingLayer, maximumFeatures)
 fetch(query).then(
     response => response.json()).then(
-        (data) => { console.log(data) }
+        (data) => {
+            data.features.map((elemento, index) => {
+                console.log(elemento)
+            })
+        }
     )
