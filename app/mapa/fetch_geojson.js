@@ -19,4 +19,4 @@ const getServerQuery = (layer, maxFeatures) => {
 }
 
 const query = getServerQuery(capa,maxiFeatures)
-fetch(query).then(response => {console.log(response)})
+fetch(query).then(response => response.json()).then((data) => { console.log(data)})
