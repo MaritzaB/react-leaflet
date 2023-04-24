@@ -26,11 +26,11 @@ fetch(query).then(
                 // console.log(elemento)
                 const { latitud: lat, longitud: lng } = elemento.properties
                 const coordinates = [lat, lng]
-                
+
                 console.log(`Coordenadas del punto ${index}: [${lat}, ${lng}]`)
-                
+
                 const marker = L.marker(coordinates).addTo(map)
-                
+
                 marker.bindPopup(`Posición: <b>${lat},${lng}</b>`)
 
             })
