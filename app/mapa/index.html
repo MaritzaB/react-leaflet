@@ -7,21 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!--BaseMap quick start guide-->
-    <script type="module" src="node_modules/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+  <script src="node_modules/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+  
+  <!--Activar para generar mapa con React-Leaflet-->
+  <!--<script type="module" src="node_modules/leaflet/dist/leaflet.js"></script>-->
   
 </head>
 
 <body>
-  <!--<div id="mapa_base"></div>-->
+  <div id="mapa_base"></div>
   <div id="root"></div>
 
-  <!--Mapa generado con Reacl-Leaflet-->
-  <script type="module" src="/src/main.jsx"></script>
+  <!--Mapa generado con React-Leaflet-->
+  <!--<script type="module" src="/src/main.jsx"></script>-->
 
 </body>
 
 <!--Mapa de Open Street Maps-->
-<!--<script src="map_osm.js"></script>-->
+<script src="map_osm.js"></script>
+<script src="fetch_geojson.js"></script>
 
 <!--Mapa de MapBox-->
 <!--<script src="mapbox.js"></script>-->
