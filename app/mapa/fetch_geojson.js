@@ -19,6 +19,12 @@ const getServerQuery = (layer, maxFeatures) => {
 }
 
 const query = getServerQuery(workingLayer, maximumFeatures)
+
+var markers = L.markerClusterGroup({ chunkedLoading: true})
+var markerList = []
+
+// Build query
+
 fetch(query).then(
     response => response.json()).then(
         (data) => {
@@ -33,6 +39,11 @@ fetch(query).then(
 
                 marker.bindPopup(`Posición: <b>${lat},${lng}</b>`)
 
+                markerList.push(marker)
+
             })
+
+            markers.addLayers(markerList);
+            map.addLayer(markers);
         }
     )
