@@ -30,6 +30,9 @@ fetch(query).then(
                 console.log(`Coordenadas del punto ${index}: [${lat}, ${lng}]`)
                 
                 const marker = L.marker(coordinates).addTo(map)
+                
+                marker.bindPopup(`Posición: <b>${lat},${lng}</b>`)
+
             })
         }
     )
