@@ -23,7 +23,9 @@ fetch(query).then(
     response => response.json()).then(
         (data) => {
             data.features.map((elemento, index) => {
-                console.log(elemento)
+                // console.log(elemento)
+                const { latitud: lat, longitud: lng } = elemento.properties
+                console.log(`Coordenadas del punto ${index}: [${lat}, ${lng}]`)
             })
         }
     )
