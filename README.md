@@ -3,7 +3,7 @@
 1. Para construir la imagen corremos:
 
 ```
-$ docker build . -t ejemplo-node
+$ docker build . --tag ejemplo-node
 ```
 
 1. Para correr el contenedor:
