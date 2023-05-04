@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  frontend:
+    build:
+      context: .
+    image: node:latest
+    container_name: react_vite
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./app:/app
+    stdin_open: true
+    tty: true

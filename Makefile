@@ -1,3 +1,7 @@
+run:
+	docker-compose run frontend bash
 
-deploy:
-	docker run --rm -it -p 5173:5173 --name react_vite --volume ${PWD}/app:/app ejemplo-node bash
+clean:
+	npm prune
+	rm --recursive --force app/mapa/dist
+	rm --recursive --force app/mapa/node_modules
