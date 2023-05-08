@@ -22,9 +22,8 @@
 </head>
 
 <body>
+  <div id="container" class="container-fluid">
   <div id="mapa_base"></div>
-
-  <div id="root"></div>
 
   <div id="progress">
     <div id="progress-bar"></div>
@@ -38,9 +37,19 @@
 <!--Mapa de Open Street Maps-->
 <script src="map_osm.js"></script>
 <script src="progress_bar.js"></script>
-<script src="get_server_query.js"></script>
-<script src="mb_lines.js"></script>
-<!--<script src="fetch_geojson.js"></script>-->
+<script src="getServerQuery.js"></script>
+<!--<script src="mb_lines.js"></script>-->
+<script src="loadDataIntoMap.js"></script>
+
+<!--Usa funciones-->
+<script>
+  const workingLayer = '3Adenue_inegi_09_'
+  const maximumFeatures = 800
+  const query = getServerQuery(workingLayer, maximumFeatures)
+
+  const denue_data = loadDataIntoMap(query,map)
+</script>
+
 
 <!--Mapa de MapBox-->
 <!--<script src="mapbox.js"></script>-->

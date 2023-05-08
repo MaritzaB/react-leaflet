@@ -1,3 +1,4 @@
+// Obten el query des servidor
 
 const getServerQuery = (layer, maxFeatures) => {
     const urlServer = '127.0.0.1'
