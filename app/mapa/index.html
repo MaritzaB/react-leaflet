@@ -42,12 +42,16 @@
 <script src="loadDataIntoMap.js"></script>
 
 <!--Usa funciones-->
+
 <script>
+  //const workingLayer = '3Agps-albatros-isla-guadalupe'
   const workingLayer = '3Adenue_inegi_09_'
   const maximumFeatures = 800
+
   const query = getServerQuery(workingLayer, maximumFeatures)
 
   const denue_data = loadDataIntoMap(query,map)
+
 </script>
 
 
