@@ -45,11 +45,16 @@
 
 <script>
   //const workingLayer = '3Agps-albatros-isla-guadalupe'
-  const workingLayer = '3Adenue_inegi_09_'
+  // const workingLayer = '3Adenue_inegi_09_'
+  const workingLayer = '3AqueryAzcapoData'
   const maximumFeatures = 800
+  const claveMunicipio = '003'
+  const claveActividad = '461190'
+  const minyear = 2003
+  const maxyear = 2023
 
-  const query = getServerQuery(workingLayer, maximumFeatures)
-
+  const query = getServerQuery(workingLayer, maximumFeatures, minyear, maxyear, claveActividad)
+ 
   const denue_data = loadDataIntoMap(query,map)
 
 </script>
