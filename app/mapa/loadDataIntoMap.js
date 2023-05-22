@@ -9,13 +9,13 @@ const loadDataIntoMap = async(query, map) => {
     response.json().then(
             (data) => {
                 data.features.map((elemento, index) => {
-                    // console.log(elemento)
-                    const { latitud: lat, longitud: lng } = elemento.properties
+                    //console.log(elemento)
+                    const { nom_estab, latitud: lat, longitud: lng } = elemento.properties
                     const coordinates = [lat, lng]
     
-                    console.log(`Coordenadas del punto ${index}: [${lat}, ${lng}]`)
+                    //console.log(`Coordenadas del punto ${index}: [${lat}, ${lng}]`)
     
-                    var marker = L.marker(coordinates).bindPopup(`Posición: <b>${lat},${lng}</b>`) 
+                    var marker = L.marker(coordinates).bindPopup(`Establecimiento: <br> ${nom_estab}`) 
     
                     markerList.push(marker)
     
@@ -24,5 +24,24 @@ const loadDataIntoMap = async(query, map) => {
                 markers.addLayers(markerList);
                 map.addLayer(markers);
             }
+        ).catch(
+            (error) => {
+                console.log(`No se pueden obtener los datos de ${query}`)
+            }
         )
 }
+
+// const createMarkerCluster = (municipioList = [], map, progressBar = null, maxFeatures) => {
+//     var markers = null;
+//     if (progress && progressBar)
+//         markers. L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar});
+//     else
+//     markers. L.markerClusterGroup({ chunkedLoading: false});
+//     municipioList.forEach(
+//         layer => {loadDataIntoMap(
+//             getServerQuery(
+//                 layer, maxFeatures, minyear, maxyear, claveActividad, claveMunicipio
+//                 )
+//                 )
+//         })
+// }
