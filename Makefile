@@ -1,3 +1,5 @@
+.PHONY: up down clean
+
 up:
 	docker-compose up -d
 	docker-compose exec frontend sh -c "cd mapa && make deploy && bash"
@@ -7,6 +9,6 @@ clean:
 	sudo rm --recursive --force app/mapa/dist
 	sudo rm --recursive --force app/mapa/node_modules
 
-down:
+down: clean
 	docker-compose down
-	clean
+	
