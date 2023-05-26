@@ -26,28 +26,34 @@ hace que el segundo sea más rápido. Es conveniente usar un solo instalador en
 cada proyecto para que no tengamos problemas de instalación.
 
 ### Comandos para `npm`
+
 ```
 $ npm create vite@latest
 ```
+
 ```
 $ npm install
 ```
+
 ```
 $ npm run dev
 ```
 
 ### Comandos para `yarn`
+
 ```
 $ yarn create vite
 ```
+
 ```
 $ yarn
 ```
+
 ```
 $ yarn dev
 ```
----
 
+---
 
 ## Might be useful:
 
@@ -67,7 +73,6 @@ $ yarn dev
 
 ## Mapas que podemos utilizar
 
-
 ## JavaScript and TypeScript
 
 Muchas veces el tipo de dato en JavaScript es de tipo `any` lo que causa mucho
@@ -77,3 +82,9 @@ Microsoft definió un nuevo lenguaje llamado TypeScript, lo que hace es que trat
 de solventar las limitantes de JS. De hecho lo que ocurre internamente cuando un
 código es escrito en JavaScript es que ocurre una _transpilación_ (traducción de
 TS a JS).
+
+## Displaying a map with React - Leaflet
+
+1. [Part 1](https://www.youtube.com/watch?v=62Y8SFi2wBk)
+2. [Part 2](https://www.youtube.com/watch?v=cK7zIoC4lEY)
+3. [Part 3](https://www.youtube.com/watch?v=fn-Dz9OZWJM)
