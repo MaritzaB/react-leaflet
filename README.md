@@ -88,3 +88,6 @@ TS a JS).
 1. [Part 1](https://www.youtube.com/watch?v=62Y8SFi2wBk)
 2. [Part 2](https://www.youtube.com/watch?v=cK7zIoC4lEY)
 3. [Part 3](https://www.youtube.com/watch?v=fn-Dz9OZWJM)
+
+[App en GitHub pages](https://github.com/gitname/react-gh-pages)
+[Tutorial react leaflet](https://www.geopois.com/tutoriales/webmapping/leaflet/react-leaflet/)

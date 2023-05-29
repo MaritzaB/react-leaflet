@@ -1,8 +1,12 @@
 .PHONY: up down clean
 
-up:
+example:
 	docker-compose up -d
 	docker-compose exec frontend sh -c "cd mapa && make deploy && bash"
+
+up:
+	docker-compose up -d
+	docker-compose exec frontend sh -c "cd albatross_map && make deploy && bash"
 
 clean:
 	npm prune
