@@ -8,17 +8,7 @@ const defaultZoom = 9
 function App() {
 
   return (
-    <MapContainer center={ guadalupeIsland } zoom={ defaultZoom } >
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={ guadalupeIsland }>
-      <Popup>
-        Isla Guadalupe
-      </Popup>
-    </Marker>
-  </MapContainer>
+    <b>Hola mundo</b>
   )
 }
 
