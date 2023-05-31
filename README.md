@@ -91,3 +91,8 @@ TS a JS).
 
 [App en GitHub pages](https://github.com/gitname/react-gh-pages)
 [Tutorial react leaflet](https://www.geopois.com/tutoriales/webmapping/leaflet/react-leaflet/)
+[Ejemplo de GitHub](https://codesandbox.io/s/great-pine-293632?file=/src/App.js:385-540)
+[Tutoriales](https://github.com/colbyfayock/launchtime-workshop/tree/master/lessons/03%20-%20Customizing%20Your%20React%20Leaflet%20Map%20with%20a%20Mapbox%20Basemap%20Style)
+[Build maps with react leaflet](https://egghead.io/lessons/react-add-geojson-location-data-to-a-react-leaflet-map-with-a-geojson-instance)
+[Mapping with react leaflet](https://egghead.io/lessons/react-customize-geojson-data-markers-with-a-react-leaflet-icon-image)
+[Codesandbox](https://codesandbox.io/search?refinementList%5Btemplate%5D=&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=react-leaflet&page=3&configure%5BhitsPerPage%5D=12)
