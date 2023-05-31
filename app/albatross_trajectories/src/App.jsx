@@ -3,11 +3,12 @@ import 'leaflet/dist/leaflet.css'
 import './App.css';
 
 const guadalupeIsland = [28.883621, -118.292683]
+const defaultZoom = 9
 
 function App() {
 
   return (
-    <MapContainer center={ guadalupeIsland } zoom={ 9 } >
+    <MapContainer center={ guadalupeIsland } zoom={ defaultZoom } >
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
