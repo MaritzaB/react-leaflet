@@ -1,19 +1,17 @@
 import React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { OpenStreetMapTileLayer } from "./OpenStreetMapTileLayer";
 
-export const MapaLeaflet = (props) => {
+export const MapaLeaflet = ({center,zoom}) => {
 
-    console.log(`Propiedades: ${props.center}`)
+    console.log(`Propiedades: ${center}`)
     return (
 
-        <MapContainer center={ props.center } zoom={ props.zoom } >
+        <MapContainer center={center} zoom={zoom} >
 
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <OpenStreetMapTileLayer />
     
-        <Marker position={ props.center }>
+        <Marker position={center}>
           <Popup>
             Isla Guadalupe
           </Popup>
