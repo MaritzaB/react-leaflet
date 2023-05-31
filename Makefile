@@ -6,7 +6,7 @@ example:
 
 up:
 	docker-compose up -d
-	docker-compose exec frontend sh -c "cd albatross_map && make deploy && bash"
+	docker-compose exec frontend sh -c "cd albatross_trajectories && make deploy && bash"
 
 clean:
 	npm prune

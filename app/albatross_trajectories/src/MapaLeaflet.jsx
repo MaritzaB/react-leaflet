@@ -1,6 +1,7 @@
 import React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { OpenStreetMapTileLayer } from "./OpenStreetMapTileLayer";
+import { MarkerMap } from "./MarkerMap";
 
 export const MapaLeaflet = ({center,zoom}) => {
 
@@ -11,11 +12,7 @@ export const MapaLeaflet = ({center,zoom}) => {
 
         <OpenStreetMapTileLayer />
     
-        <Marker position={center}>
-          <Popup>
-            Isla Guadalupe
-          </Popup>
-        </Marker>
+        <MarkerMap position={center} text={<span>Área de anidamientos de los <br/> Albatros de Layssan</span>} />
         
         </MapContainer>
     )
