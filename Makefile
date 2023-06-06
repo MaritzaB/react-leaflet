@@ -13,6 +13,6 @@ clean:
 	sudo rm --recursive --force app/mapa/dist
 	sudo rm --recursive --force app/mapa/node_modules
 
-down: clean
+down:
 	docker-compose down
 	
