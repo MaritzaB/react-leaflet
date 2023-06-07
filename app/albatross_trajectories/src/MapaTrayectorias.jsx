@@ -1,5 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
+import { MapaLeaflet } from './MapaLeaflet';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -13,16 +14,26 @@ const getServerQuery = () => {
         "maxFeatures=3&" +
         "outputFormat=application%2Fjson&" +
         "viewparams=season:incubacion"
-    )
+    );
 }
 
 
-export const Profile = () => {
+export const MapaTrayectorias = () => {
     const { data, error, isLoading } = useSWR(getServerQuery(), fetcher)
- 
+
     if (error) return <div>failed to load</div>
     if (isLoading) return <div>loading...</div>
 
-    console.log(data.features)
-    return <div>Informacion procesada...</div>
+    const coordenadas = []
+
+    data.features.forEach(element => {
+        coordenadas.push([element.geometry.coordinates])
+    });
+
+    console.log('Coordenadas array:', coordenadas)
+    console.log("Listo calisto")
+
+    const guadalupeIsland = [28.883621, -118.292683]
+    const defaultZoom = 9
+    return (<MapaLeaflet center={guadalupeIsland} zoom={defaultZoom} puntos={coordenadas}/>)
 }
