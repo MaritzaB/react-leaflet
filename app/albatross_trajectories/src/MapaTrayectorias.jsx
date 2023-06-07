@@ -4,22 +4,35 @@ import { MapaLeaflet } from './MapaLeaflet';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
+
 const getServerQuery = () => {
-    return(
-        "http://localhost:8081/geoserver/curso_gis/ows?" +
+    const urlServer = 'localhost:8081'
+    const server = 'geoserver'
+    const workspace = 'curso_gis'
+    //const layer = 'temporadas_albatross'
+    const layer = 'albatross_filter'
+    const maxFeatures = 1000
+//    const viewparams = 'season:crianza'
+    const viewparams = 'year:2018'
+    const query = 
+        `http://${urlServer}/${server}/${workspace}/ows?` +
         "service=WFS&" +
         "version=1.0.0&" +
         "request=GetFeature&" +
-        "typeName=curso_gis%3Atemporadas_albatross&" +
-        "maxFeatures=500&" +
+        `typeName=${workspace}%3A${layer}&` +
+        `maxFeatures=${maxFeatures}&` +
         "outputFormat=application%2Fjson&" +
-        "viewparams=season:crianza"
+        `viewparams=${viewparams}`
+
+    return(
+        query
     );
 }
 
+const query = getServerQuery()
 
 export const MapaTrayectorias = () => {
-    const { data, error, isLoading } = useSWR(getServerQuery(), fetcher)
+    const { data, error, isLoading } = useSWR(query, fetcher)
 
     if (error) return <div>failed to load</div>
     if (isLoading) return <div>loading...</div>
