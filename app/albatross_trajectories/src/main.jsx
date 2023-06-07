@@ -11,7 +11,6 @@ const ejemplo = [[28.117638,-115.157151], [31.736051,-116.294682], [30.985556,-1
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <MapaLeaflet center={guadalupeIsland} zoom={defaultZoom} puntos={ejemplo}/>
-    {/*<MapaTrayectorias />*/}
+    <MapaTrayectorias />
   </React.StrictMode>,
 )

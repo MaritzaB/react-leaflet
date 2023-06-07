@@ -11,9 +11,9 @@ const getServerQuery = () => {
         "version=1.0.0&" +
         "request=GetFeature&" +
         "typeName=curso_gis%3Atemporadas_albatross&" +
-        "maxFeatures=3&" +
+        "maxFeatures=500&" +
         "outputFormat=application%2Fjson&" +
-        "viewparams=season:incubacion"
+        "viewparams=season:crianza"
     );
 }
 
@@ -27,13 +27,15 @@ export const MapaTrayectorias = () => {
     const coordenadas = []
 
     data.features.forEach(element => {
-        coordenadas.push([element.geometry.coordinates])
+        console.log(element.properties.latitude, element.properties.longitude)
+        coordenadas.push([element.properties.latitude, element.properties.longitude])
     });
 
-    console.log('Coordenadas array:', coordenadas)
+    console.log('Coordenadas array: ', coordenadas)
     console.log("Listo calisto")
 
     const guadalupeIsland = [28.883621, -118.292683]
     const defaultZoom = 9
     return (<MapaLeaflet center={guadalupeIsland} zoom={defaultZoom} puntos={coordenadas}/>)
+    
 }
