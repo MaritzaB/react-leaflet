@@ -11,7 +11,7 @@ export const MapaLeaflet = ({center, zoom, puntos}) => {
 
         <OpenStreetMapTileLayer />
         {
-            puntos.map((coordenadas, index) => <MarkerMap position={coordenadas} text={index}/>)
+            puntos.map(({latitude, longitude, albatross_id}) => <MarkerMap position={[latitude, longitude]} text={albatross_id}/>)
         }
         
         </MapContainer>
