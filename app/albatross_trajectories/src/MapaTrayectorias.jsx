@@ -23,7 +23,7 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
     );
 }
 
-const nfeatures = 1000
+const nfeatures = 500
 
 const wlayer = 'albatross_filter'
 const parameters = 'year:2018'

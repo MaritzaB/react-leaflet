@@ -96,3 +96,5 @@ TS a JS).
 [Build maps with react leaflet](https://egghead.io/lessons/react-add-geojson-location-data-to-a-react-leaflet-map-with-a-geojson-instance)
 [Mapping with react leaflet](https://egghead.io/lessons/react-customize-geojson-data-markers-with-a-react-leaflet-icon-image)
 [Codesandbox](https://codesandbox.io/search?refinementList%5Btemplate%5D=&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=react-leaflet&page=3&configure%5BhitsPerPage%5D=12)
+[Custom marker with React-Leaflet](https://codewithwolf.com/how-to-change-marker-color-react-leaflet)
+[Custom marker cluster react leaflet](https://akursat.gitbook.io/marker-cluster/examples/custom-marker-clusters)
