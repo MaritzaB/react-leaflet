@@ -4,7 +4,7 @@ import * as L from "leaflet";
 
 // Para regresar el icono a su estado original, quitar icon={icon}
 
-export const MarkerMap = ({position, text}) => {
+export const MarkerMap = ({key, position, text}) => {
   const LeafIcon = L.Icon.extend({
     options: {}
   });
@@ -15,7 +15,7 @@ export const MarkerMap = ({position, text}) => {
     });
 
     return (
-        <Marker position={position} icon={icon}>
+        <Marker key={key} position={position} icon={icon}>
         <Popup>
           {text}
         </Popup>
