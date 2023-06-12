@@ -28,8 +28,10 @@ const nfeatures = 8000
 //const wlayer = 'albatross_filter'
 //const parameters = 'year:2018'
 
+const season = ['incubacion', 'eclosion', 'crianza', 'no_reproduccion']
 const wlayer = 'temporadas_albatross'
-const parameters = 'season:incubacion'
+const parameters = 'season:' + season[0]
+
 // incubacion, eclosion, crianza, no reproduccion
 
 const query = getServerQuery(wlayer, nfeatures, parameters)
@@ -48,7 +50,7 @@ export const MapaTrayectorias = () => {
             {
                 latitude: properties.latitude,
                 longitude: properties.longitude,
-                albatross_id: `Albatross_id: ${properties.name}  Fecha: ${properties.date}`
+                popupText: `Albatross_id: ${properties.name}  Fecha: ${properties.date}`
             }
         )
     });

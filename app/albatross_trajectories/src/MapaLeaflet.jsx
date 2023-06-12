@@ -13,11 +13,11 @@ export const MapaLeaflet = ({center, zoom, puntos}) => {
         <OpenStreetMapTileLayer />
         {
           <MarkerClusterGroup chunkedLoading >
-            {puntos.map(({index, latitude, longitude, albatross_id}) => 
+            {puntos.map(({index, latitude, longitude, popupText}) => 
               <MarkerMap 
                 key={index}
                 position={[latitude, longitude]} 
-                text={albatross_id}
+                text={popupText}
               />)}
           </MarkerClusterGroup>
         }
