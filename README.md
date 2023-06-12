@@ -98,3 +98,7 @@ TS a JS).
 [Codesandbox](https://codesandbox.io/search?refinementList%5Btemplate%5D=&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=react-leaflet&page=3&configure%5BhitsPerPage%5D=12)
 [Custom marker with React-Leaflet](https://codewithwolf.com/how-to-change-marker-color-react-leaflet)
 [Custom marker cluster react leaflet](https://akursat.gitbook.io/marker-cluster/examples/custom-marker-clusters)
+
+## Customize react-leaflet map with Material UI and Boortstrap
+
+[Customize layers with material](https://javascript.plainenglish.io/react-leaflet-v3-creating-a-mapping-application-d5477f19bdeb)

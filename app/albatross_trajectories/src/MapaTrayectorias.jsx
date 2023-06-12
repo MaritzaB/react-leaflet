@@ -23,14 +23,14 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
     );
 }
 
-const nfeatures = 500
+const nfeatures = 8000
 
-const wlayer = 'albatross_filter'
-const parameters = 'year:2018'
+//const wlayer = 'albatross_filter'
+//const parameters = 'year:2018'
 
-//const layer = 'temporadas_albatross'
-//const viewparams = 'season:crianza'
-
+const wlayer = 'temporadas_albatross'
+const parameters = 'season:incubacion'
+// incubacion, eclosion, crianza, no reproduccion
 
 const query = getServerQuery(wlayer, nfeatures, parameters)
 
