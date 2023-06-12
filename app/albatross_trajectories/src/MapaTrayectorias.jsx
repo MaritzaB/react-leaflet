@@ -50,7 +50,10 @@ export const MapaTrayectorias = () => {
             {
                 latitude: properties.latitude,
                 longitude: properties.longitude,
-                popupText: `Albatross_id: ${properties.name}  Fecha: ${properties.date}`
+                popupText: `
+                    Albatross_id: ${properties.name}  
+                    Fecha: ${properties.date}
+                    `
             }
         )
     });
@@ -59,7 +62,7 @@ export const MapaTrayectorias = () => {
     console.log("Listo calisto")
 
     const guadalupeIsland = [28.883621, -118.292683]
-    const defaultZoom = 6
+    const defaultZoom = 5
     return (<MapaLeaflet center={guadalupeIsland} zoom={defaultZoom} puntos={coordenadas}/>)
     
 }
