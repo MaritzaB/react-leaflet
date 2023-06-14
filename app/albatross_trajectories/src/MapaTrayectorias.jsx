@@ -28,7 +28,7 @@ const nfeatures = 8000
 //const wlayer = 'albatross_filter'
 //const parameters = 'year:2018'
 
-const season = ['incubacion', 'eclosion', 'crianza', 'no_reproduccion']
+const season = ['incubacion', 'eclosion', 'crianza', 'no reproduccion']
 const wlayer = 'temporadas_albatross'
 const parameters = 'season:' + season[0]
 
@@ -49,11 +49,7 @@ export const MapaTrayectorias = () => {
         coordenadas.push(
             {
                 latitude: properties.latitude,
-                longitude: properties.longitude,
-                popupText: `
-                    Albatross_id: ${properties.name}  
-                    Fecha: ${properties.date}
-                    `
+                longitude: properties.longitude
             }
         )
     });
