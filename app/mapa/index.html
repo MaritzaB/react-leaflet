@@ -51,19 +51,16 @@
   // Iztapalapa 007, Magda. Contr 008, Milpa Alta 009, Alvaro Obregon 010,
   // Tláhuac 011, Tlalpan 012, Xochimilco 013, Benito J. 014, Cuautémoc 015, M.
   // Hidalgo 016, V. Carranza 017
+  const fecha = '2023-03-22'
+  const wlayer = 'temporadas_albatross'
+  const parameters = 'season:' + fecha
 
-  const workingLayer = '3AqueryAzcapoData'
-  const maximumFeatures = 800
-  const claveActividad = '461190'
-  const minYear = '2003'
-  const maxYear = '2023'
-  const claveAzcapotzalco = '002'
-  const claveCoyoacan = '003'
+  const query_max_afluence = getServerQuery(wlayer, parameters)
 
-  const queryAzcapo = getServerQuery(workingLayer, maximumFeatures, minYear, maxYear, claveActividad, claveAzcapotzalco)
+  //const queryAzcapo = getServerQuery(workingLayer, maximumFeatures, minYear, maxYear, claveActividad, claveAzcapotzalco, viewparams)
   //const queryCoyoacan = getServerQuery(workingLayer, maximumFeatures, minyear, maxyear, claveCoyoacan, claveActividad)
 
-  const denue_data = loadDataIntoMap(queryAzcapo, map)
+  const denue_data = loadDataIntoMap(query_max_afluence, map)
 
 </script>
 
