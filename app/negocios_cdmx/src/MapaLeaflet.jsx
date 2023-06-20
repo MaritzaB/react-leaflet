@@ -11,7 +11,7 @@ export const MapaLeaflet = ({center, zoom, puntos}) => {
     const [selectedDate, setselectedDate] = useState(new Date());
 
     const handleDateChange = date => {
-      setSelectedDate(date);
+      setselectedDate(date);
     };
 
     const formatDate = date => {
@@ -26,7 +26,7 @@ export const MapaLeaflet = ({center, zoom, puntos}) => {
         selected={selectedDate}
         onChange={handleDateChange}
         />
-      <p>Selected date: {formatDate(selectedDate)}</p>
+      <p>Fecha seleccionada: {formatDate(selectedDate)}</p>
 
         <MapContainer center={center} zoom={zoom} >
 

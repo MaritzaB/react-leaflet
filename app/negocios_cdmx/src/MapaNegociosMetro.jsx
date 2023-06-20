@@ -23,6 +23,7 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
     );
 }
 
+export const MapaNegociosMetro = () => {
 
 const nfeatures = 50000
 const fecha = '2023-03-22'
@@ -30,8 +31,6 @@ const wlayer = 'max_afluence'
 const parameters = 'date:' + fecha
 
 const query = getServerQuery(wlayer, nfeatures, parameters)
-
-export const MapaNegociosMetro = () => {
     
     const { data, error, isLoading } = useSWR(query, fetcher)
 
