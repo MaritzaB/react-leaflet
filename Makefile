@@ -10,7 +10,7 @@ up:
 
 metro:
 	docker-compose up -d
-	docker-compose exec frontend sh -c "cd negocios_metro_cdmx && make deploy && bash"
+	docker-compose exec frontend sh -c "cd negocios_cdmx && make deploy && bash"
 
 clean:
 	npm prune

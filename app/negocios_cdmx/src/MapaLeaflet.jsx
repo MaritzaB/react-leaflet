@@ -8,28 +8,8 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { format } from 'date-fns';
 
 export const MapaLeaflet = ({center, zoom, puntos}) => {
-    const [selectedDate, setselectedDate] = useState(new Date());
-
-    const handleDateChange = date => {
-      setselectedDate(date);
-    };
-
-    const formatDate = date => {
-      return date ? format(date, 'yyyy-MM-dd') : '';
-    };
-
     return (
-      <div>
-      <h1>Mapa de negocios a la redonda de la estación con más afluencia del día</h1>
-        <DatePicker
-        calendarClassName="custom-calendar"
-        selected={selectedDate}
-        onChange={handleDateChange}
-        />
-      <p>Fecha seleccionada: {formatDate(selectedDate)}</p>
-
         <MapContainer center={center} zoom={zoom} >
-
         <OpenStreetMapTileLayer />
         {
           <MarkerClusterGroup chunkedLoading >
@@ -42,6 +22,5 @@ export const MapaLeaflet = ({center, zoom, puntos}) => {
           </MarkerClusterGroup>
         }  
         </MapContainer>
-      </div>
     )
 }

@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react';
 import useSWR from 'swr'
 import { MapaLeaflet } from './MapaLeaflet';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import { format } from 'date-fns';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -23,15 +26,26 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
     );
 }
 
+
 export const MapaNegociosMetro = () => {
 
-const nfeatures = 50000
-const fecha = '2023-03-22'
-const wlayer = 'max_afluence'
-const parameters = 'date:' + fecha
+    const [selectedDate, setselectedDate] = useState(new Date(2023, 2, 22));
 
-const query = getServerQuery(wlayer, nfeatures, parameters)
-    
+    const handleDateChange = date => {
+      setselectedDate(date);
+    };
+
+    const formatDate = date => {
+      return date ? format(date, 'yyyy-MM-dd') : '';
+    };
+    console.log('Fecha seleccionada', formatDate(selectedDate))
+
+    const nfeatures = 50000
+    const wlayer = 'max_afluence'
+    const parameters = 'date:' + formatDate(selectedDate)
+
+    const query = getServerQuery(wlayer, nfeatures, parameters)
+
     const { data, error, isLoading } = useSWR(query, fetcher)
 
     if (error) return <div>failed to load</div>
@@ -53,8 +67,21 @@ const query = getServerQuery(wlayer, nfeatures, parameters)
 
     const centerPoint = [19.432608, -99.133209]
     const defaultZoom = 12
+
     return (
+        <div>
+        <h1>
+            Mapa de negocios a la redonda de la estación del metro con 
+            mayor afluencia en la CDMX
+        </h1>
+        <DatePicker
+            calendarClassName="custom-calendar"
+            selected={selectedDate}
+            onChange={handleDateChange}
+        />
+        <p>Fecha seleccionada: {formatDate(selectedDate)}</p>
         <MapaLeaflet center={centerPoint} zoom={defaultZoom} puntos={coordenadas}/>
+        </div>
         )
     
 }
