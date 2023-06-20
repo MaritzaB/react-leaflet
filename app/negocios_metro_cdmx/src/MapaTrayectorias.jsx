@@ -23,14 +23,20 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
     );
 }
 
-const nfeatures = 50
+const nfeatures = 50000
 
 //const wlayer = 'albatross_filter'
 //const parameters = 'year:2018'
 
-const season = ['incubacion', 'eclosion', 'crianza', 'no reproduccion']
-const wlayer = 'temporadas_albatross'
-const parameters = 'season:' + season[0]
+//const season = ['incubacion', 'eclosion', 'crianza', 'no reproduccion']
+//const wlayer = 'temporadas_albatross'
+//const parameters = 'season:' + season[0]
+
+const fecha = '2023-03-22'
+const wlayer = 'max_afluence'
+const parameters = 'date:' + fecha
+
+//const query_max_afluence = getServerQuery(wlayer, parameters)
 
 // incubacion, eclosion, crianza, no reproduccion
 
@@ -48,8 +54,8 @@ export const MapaTrayectorias = () => {
         console.log(properties.name)
         coordenadas.push(
             {
-                latitude: properties.latitude,
-                longitude: properties.longitude
+                latitude: properties.latitud,
+                longitude: properties.longitud
             }
         )
     });
