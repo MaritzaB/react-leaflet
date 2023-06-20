@@ -5,18 +5,28 @@ import { MarkerMap } from "./MarkerMap";
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import { format } from 'date-fns';
 
 export const MapaLeaflet = ({center, zoom, puntos}) => {
-    const [startDate, setStartDate] = useState(new Date());
+    const [selectedDate, setselectedDate] = useState(new Date());
+
+    const handleDateChange = date => {
+      setSelectedDate(date);
+    };
+
+    const formatDate = date => {
+      return date ? format(date, 'yyyy-MM-dd') : '';
+    };
+
     return (
       <div>
       <h1>Mapa de negocios a la redonda de la estación con más afluencia del día</h1>
         <DatePicker
         calendarClassName="custom-calendar"
-        dateFormat="yyyy/MM/dd"
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        selected={selectedDate}
+        onChange={handleDateChange}
         />
+      <p>Selected date: {formatDate(selectedDate)}</p>
 
         <MapContainer center={center} zoom={zoom} >
 
