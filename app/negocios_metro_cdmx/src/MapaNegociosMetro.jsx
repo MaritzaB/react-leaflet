@@ -24,25 +24,13 @@ const getServerQuery = (layer, maxFeatures, viewparams) => {
 }
 
 const nfeatures = 50000
-
-//const wlayer = 'albatross_filter'
-//const parameters = 'year:2018'
-
-//const season = ['incubacion', 'eclosion', 'crianza', 'no reproduccion']
-//const wlayer = 'temporadas_albatross'
-//const parameters = 'season:' + season[0]
-
 const fecha = '2023-03-22'
 const wlayer = 'max_afluence'
 const parameters = 'date:' + fecha
 
-//const query_max_afluence = getServerQuery(wlayer, parameters)
-
-// incubacion, eclosion, crianza, no reproduccion
-
 const query = getServerQuery(wlayer, nfeatures, parameters)
 
-export const MapaTrayectorias = () => {
+export const MapaNegociosMetro = () => {
     const { data, error, isLoading } = useSWR(query, fetcher)
 
     if (error) return <div>failed to load</div>
@@ -61,10 +49,9 @@ export const MapaTrayectorias = () => {
     });
 
     console.log('Coordenadas array: ', coordenadas)
-    console.log("Listo calisto")
 
-    const guadalupeIsland = [28.883621, -118.292683]
-    const defaultZoom = 5
-    return (<MapaLeaflet center={guadalupeIsland} zoom={defaultZoom} puntos={coordenadas}/>)
+    const centerPoint = [19.432608, -99.133209]
+    const defaultZoom = 12
+    return (<MapaLeaflet center={centerPoint} zoom={defaultZoom} puntos={coordenadas}/>)
     
 }
