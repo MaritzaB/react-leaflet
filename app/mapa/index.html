@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Plantilla React-Leaflet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!--BaseMap quick start guide-->
+  <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+  <script src="node_modules/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+
+  <!--Include style files and markerCluster plugin file-->
+  <link rel="stylesheet" href="node_modules/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <script src="node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+  
+  <!--Activar para generar mapa con React-Leaflet-->
+  <!--<script type="module" src="node_modules/leaflet/dist/leaflet.js"></script>-->
+  
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+  <div id="mapa_base"></div>
+
+  <div id="progress">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!--Mapa generado con React-Leaflet-->
+  <!--<script type="module" src="/src/main.jsx"></script>-->
+
+</body>
+
+<!--Mapa de Open Street Maps-->
+<script src="map_osm.js"></script>
+<script src="progress_bar.js"></script>
+<script src="getServerQuery.js"></script>
+<!--<script src="mb_lines.js"></script>-->
+<script src="loadDataIntoMap.js"></script>
+
+<!--Usa funciones-->
+
+<script>
+  //const workingLayer = '3Agps-albatros-isla-guadalupe'
+  // const workingLayer = '3Adenue_inegi_09_'
+
+  // Azcapo-002, Coyoacan-003, Cuajimalpa 004, GAM-005, Iztacalco 006,
+  // Iztapalapa 007, Magda. Contr 008, Milpa Alta 009, Alvaro Obregon 010,
+  // Tláhuac 011, Tlalpan 012, Xochimilco 013, Benito J. 014, Cuautémoc 015, M.
+  // Hidalgo 016, V. Carranza 017
+  const fecha = '2023-03-22'
+  const wlayer = 'max_afluence'
+  const parameters = 'date:' + fecha
+
+  const query_max_afluence = getServerQuery(wlayer, parameters)
+
+  //const queryAzcapo = getServerQuery(workingLayer, maximumFeatures, minYear, maxYear, claveActividad, claveAzcapotzalco, viewparams)
+  //const queryCoyoacan = getServerQuery(workingLayer, maximumFeatures, minyear, maxyear, claveCoyoacan, claveActividad)
+
+  const denue_data = loadDataIntoMap(query_max_afluence, map)
+
+</script>
+
+
+<!--Mapa de MapBox-->
+<!--<script src="mapbox.js"></script>-->
+
+</html>
