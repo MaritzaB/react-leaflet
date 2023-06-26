@@ -1,5 +1,14 @@
 # react-leaflet
 
+Para levantar la aplicación web con los datos de trayectorias de albatros de
+Laysan, corremos el siguiente comando:
+
+```
+$ make up
+```
+
+# Other sources of information
+
 1. Para construir la imagen corremos:
 
 ```
