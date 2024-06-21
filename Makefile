@@ -1,16 +1,16 @@
 .PHONY: up down clean
 
 example:
-	docker-compose up -d
-	docker-compose exec frontend sh -c "cd mapa && make deploy && bash"
+	docker compose up -d
+	docker compose exec frontend sh -c "cd mapa && make deploy && bash"
 
 up:
-	docker-compose up -d
-	docker-compose exec frontend sh -c "cd albatross_trajectories && make deploy && bash"
+	docker compose up -d
+	docker compose exec frontend sh -c "cd albatross_trajectories && make deploy && bash"
 
 metro:
-	docker-compose up -d
-	docker-compose exec frontend sh -c "cd negocios_cdmx && make deploy && bash"
+	docker compose up -d
+	docker compose exec frontend sh -c "cd negocios_cdmx && make deploy && bash"
 
 clean:
 	npm prune
@@ -18,5 +18,4 @@ clean:
 	sudo rm --recursive --force app/mapa/node_modules
 
 down:
-	docker-compose down
-	
+	docker compose down
